@@ -4,13 +4,16 @@
 2022年9月1日补充
 1. 使用前需要安装acme.sh,可以通过一条命令或者是直接拉官方代码仓库仓库在本地执行
 2. 如果脚本卡住不动可能要开一下🪜
+
+2023年10月4日补充
+1. 增加`cloudflare`的使用记录
 ---
 ## 命令一键安装
 > curl https://get.acme.sh | sh -s email=my@example.com
 ## 直接拉官方仓库
 > git clone https://github.com/acmesh-official/acme.sh.git
 
-# 签发命令
+# 阿里云域名签发命令
 ```shell
 
 # 这里使用let‘s encrypt的api，dns的方式签发泛域名证书
@@ -21,4 +24,14 @@
 source ./dns_ali.env
 # 签发证书
 acme.sh --issue --server letsencrypt -d '*.shubo6.cn' --dns dns_ali
+```
+
+# cloudflare域名签发命令
+```shell
+
+
+# 导入环境变量
+source ./dns_cf.env
+# 签发证书
+acme.sh --issue --server letsencrypt -d '*.shubo6.cn' --dns dns_cf
 ```
