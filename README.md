@@ -31,6 +31,10 @@ acme.sh --issue --server letsencrypt -d '*.shubo6.cn' --dns dns_ali
 
 
 # 导入环境变量
+
+
+# 我的个人资料 -> API令牌 -> Global API Key -> 查看 填充到 CF_Key
+
 source ./dns_cf.env
 # 签发证书
 acme.sh --issue --server letsencrypt -d '*.shubo6.cn' --dns dns_cf
